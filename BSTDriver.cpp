@@ -30,7 +30,7 @@ int main()
    int numItems = cds->size();
    cout << numItems << endl;
    cout << endl;
-
+   
    //test the binary search tree
    //insert all of the cds
    ListArrayIterator<CD>* iter = cds->iterator();
@@ -41,7 +41,7 @@ int main()
       bst->insert(cd);
    }
    delete iter;
-
+   
    BinaryTreeIterator<CD>* bst_iter = bst->iterator();
    bst_iter->setInorder();  //takes a snapshot of the data
    while(bst_iter->hasNext())
@@ -50,13 +50,12 @@ int main()
       cd->displayCD();
    }
    delete bst_iter;
-
+   
    //DO THIS
    //display the height of the binary search tree (not minimum height)
    //display whether the binary search tree is balanced (should not be balanced)
 
-   cout<< " height: " << bst->getHeight() << endl;
-
+   cout<< " Height: " << bst->getHeight() << endl;
    bool bal = bst->isBalanced();
    if(bal)
    {
@@ -68,6 +67,7 @@ int main()
        cout<< "Not Balanced" << endl;
    }
 
+   
 
    //create a minimum height binary search tree
    BinarySearchTree<CD>* min_bst = bst->minimize();
@@ -85,7 +85,7 @@ int main()
    //DO THIS
    //display the height of the binary search tree (should be minimum height)
    //display whether the binary search tree is balanced (should be balanced)
-   cout << "min height: " << min_bst->getHeight() << endl;
+   cout << "Min height: " << min_bst->getHeight() << endl;
    bool min_bal = min_bst->isBalanced();
    if(min_bal)
    {
@@ -96,6 +96,8 @@ int main()
    {
        cout << " Min Not Balanced" << endl;
    }
+
+
 
    //create a complete binary search tree
    BinarySearchTree<CD>* complete_bst = bst->minimizeComplete();

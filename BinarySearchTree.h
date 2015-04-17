@@ -131,26 +131,21 @@ bool BinarySearchTree<T>::isBalanced(TreeNode<T>* tNode)
 
         else
         {
-        int leftHeight = getHeight(left);
-        int rightHeight = getHeight(right);
-        int x = abs(rightHeight - leftHeight);
+			int leftHeight = getHeight(left);
+			int rightHeight = getHeight(right);
+			int x = abs(rightHeight - leftHeight);
 
-        if(x < 2)
-        {
-            return true;
+			if(x < 2)
+			{
+				return true;
+			}
+
+			else
+			{
+				return false;
+			}
         }
-
-        else
-        {
-            return false;
-        }
-        }
-
-
     }
-
-
-
 }
 
 template < class T >
@@ -161,8 +156,6 @@ BinarySearchTree<T>* BinarySearchTree<T>::minimize()
    //DO THIS
    bst->minimize(items, 0, sze - 1);
    return bst;
-
-
 }
 
 template < class T >
@@ -178,8 +171,6 @@ void BinarySearchTree<T>::minimize(T** items, int first, int last)
    this->insert(items[mid]);
    this->minimize(items, first, mid-1);
    this->minimize(items, mid+1, last);
-
-
 }
 
 template < class T >
@@ -208,8 +199,6 @@ BinarySearchTree<T>* BinarySearchTree<T>::minimizeComplete()
    //DO THIS
    bst->minimizeComplete(items,0,sze-1);
    return bst;
-
-
 }
 
 template < class T >
@@ -245,15 +234,12 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
             mid++;
             //DO THIS
             //try again with mid shifted one to the right
+
+			
             k_left = log(mid - first + 1)*log_factor;
             int_k_left = (int)(k_left + 0.5);
             k_right = log(last - mid + 1)*log_factor;
             int_k_right = (int)(k_right + 0.5);
-
-
-
-
-
          }
       }
 
@@ -263,8 +249,6 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
       insert(items[mid]);
       minimizeComplete(items, first, mid - 1);
       minimizeComplete(items, mid + 1, last);
-
-
    }
 }
 
